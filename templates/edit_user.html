@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Update User</title>
+  <link rel="stylesheet" href="{% static 'css/signup.css' %}">  
+</head>
+<body>
+  <div class="container">
+    <form class="signup-form" action="{% url 'edit_user' user.id  %}" method="post">
+      {% csrf_token %}
+      <h1>Update</h1>
+      <input type="text" placeholder="Full Name"  name="new_username" >
+      <input type="text" placeholder="Username"  name="new_first_name">
+      <input type="email" placeholder="Email"  name="new_email" >
+      <button type="submit">Update</button>
+    </form>
+  </div>
+
+
+</body>
+</html>
+
+
